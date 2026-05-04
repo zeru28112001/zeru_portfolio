@@ -5,7 +5,7 @@ export const NAV_LINKS = [
 ];
 
 export const HERO_CONTENT = {
-  title: "Junior Web Developer",
+  title: "Junior Web Developer Wai Yan Ko Ko",
   badge: "Open to internship & junior roles",
   bio: "Self-taught web developer passionate about UI design and problem-solving. I build real-world web applications using PHP, JavaScript, and modern web technologies.",
   heroImage: "/profile.jpg",
