@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+:root {
+  --primarylw: #173eff;
+  --primarylw-2: #3758f9;
+  --darklw: #11131B;
+}
+
+body { 
+  font-family: 'DM Sans', sans-serif; 
+}
+
+h1, h2, h3, nav { 
+  font-family: 'Syne', sans-serif; 
+}
+
+/* Lightswind-style animated gradient border */
+.lw-card {
+  position: relative;
+  border-radius: 1rem;
+  background: #181b27;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.lw-card:hover {
+  border-color: var(--primarylw);
+  transform: translateY(-4px);
+}
+
+.lw-btn {
+  background: var(--primarylw);
+  color: #fff;
+  padding: 0.7rem 1.8rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  font-family: 'Syne', sans-serif;
+  letter-spacing: 0.02em;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.lw-btn:hover {
+  background: var(--primarylw-2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(23,62,255,0.35);
+}
+
+.lw-btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--primarylw);
+  color: var(--primarylw);
+}
+
+.lw-btn-outline:hover {
+  background: var(--primarylw);
+  color: #fff;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fff 0%, var(--primarylw-2) 55%, #a8bfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+/* Lightswind badge pill */
+.lw-badge {
+  background: rgba(23,62,255,0.15);
+  border: 1px solid rgba(23,62,255,0.3);
+  color: #a8bfff;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Skill bar animation */
+@keyframes fillBar { from { width: 0 } }
+.skill-bar-inner { animation: fillBar 1.2s cubic-bezier(.4,0,.2,1) both; }
+
+/* Fade up */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up { animation: fadeUp 0.8s cubic-bezier(.4,0,.2,1) both; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.22s; }
+.delay-3 { animation-delay: 0.34s; }
+.delay-4 { animation-delay: 0.46s; }
+
+/* Nav blur */
+.nav-blur {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(17,19,27,0.82);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #11131b; }
+::-webkit-scrollbar-thumb { background: #173eff55; border-radius: 4px; }
