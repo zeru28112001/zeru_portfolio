@@ -106,7 +106,7 @@ export const ScrollTimeline = ({
   const progressHeight = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
   useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((v) => {
+    const unsubscribe = scrollYProgress.on("change", (v) => {
       const newIndex = Math.floor(v * events.length);
       if (
         newIndex !== activeIndex &&
@@ -206,9 +206,6 @@ export const ScrollTimeline = ({
         : cardAlignment === "left"
         ? "lg:mr-auto lg:ml-0"
         : "lg:ml-auto lg:mr-0";
-    const perspectiveClass = perspective
-      ? "transform transition-transform hover:rotate-y-1 hover:rotate-x-1"
-      : "";
 
     return cn(
       baseClasses,
@@ -241,8 +238,6 @@ export const ScrollTimeline = ({
             className={cn(getConnectorClasses(), "h-full absolute top-0 z-10")}
           ></div>
 
-          {/* === MODIFICATION START === */}
-          {/* Enhanced Progress Indicator with Traveling Glow */}
           {progressIndicator && (
             <>
               {/* The main filled progress line */}
@@ -256,7 +251,6 @@ export const ScrollTimeline = ({
                   borderRadius:
                     progressLineCap === "round" ? "9999px" : "0px",
                   background: `linear-gradient(to bottom, #22d3ee, #6366f1, #a855f7)`,
-                  // Enhanced shadow for a constant glow effect along the path
                   boxShadow: `
                     0 0 15px rgba(99,102,241,0.5),
                     0 0 25px rgba(168,85,247,0.3)
@@ -270,15 +264,14 @@ export const ScrollTimeline = ({
                   top: progressHeight,
                   left: "50%",
                   translateX: "-50%",
-                  translateY: "-50%", // Center the comet on the line's end point
+                  translateY: "-50%",
                 }}
               >
                 <motion.div
-                  className="w-5 h-5 rounded-full" // Size of the comet core
+                  className="w-5 h-5 rounded-full"
                   style={{
                     background:
                       "radial-gradient(circle, rgba(168,85,247,0.8) 0%, rgba(99,102,241,0.5) 40%, rgba(34,211,238,0) 70%)",
-                    // Intense, layered glow effect for the comet
                     boxShadow: `
                       0 0 15px 4px rgba(168, 85, 247, 0.6),
                       0 0 25px 8px rgba(99, 102, 241, 0.4),
@@ -297,7 +290,6 @@ export const ScrollTimeline = ({
               </motion.div>
             </>
           )}
-          {/* === MODIFICATION END === */}
 
           <div className="relative z-20">
             {events.map((event, index) => {
