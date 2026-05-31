@@ -19,11 +19,11 @@ const BASE_URL = "https://zeru.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Zeru | Full Stack Web Developer & Designer",
+    default: "Zeru | Junior Web Developer",
     template: "%s | Zeru Portfolio",
   },
   description:
-    "Full-stack web developer passionate about crafting fast, beautiful, and accessible web experiences. Explore my portfolio, projects, skills, and services.",
+    "Self-taught junior web developer passionate about UI design and problem-solving. Explore my portfolio, projects, and skills.",
   icons: {
     icon: "/profile.jpg",
     shortcut: "/profile.jpg",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   keywords: [
     "Web Developer",
     "Frontend Developer",
-    "Full Stack Developer",
+    "Junior Web Developer",
     "Zeru",
     "Portfolio",
     "React",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Zeru | Web Developer Portfolio",
+    title: "Zeru | Junior Web Developer",
     description:
-      "Creating beautiful and responsive websites. Building fast and scalable web applications.",
+      "Self-taught junior web developer passionate about UI design and problem-solving. Check out my latest work.",
     url: BASE_URL,
     siteName: "Zeru Portfolio",
     images: [
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Zeru — Full Stack Web Developer Portfolio",
+        alt: "Zeru — Junior Web Developer Portfolio",
       },
     ],
     locale: "en_US",
@@ -67,9 +67,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zeru | Full Stack Web Developer",
+    title: "Zeru | Junior Web Developer",
     description:
-      "I build beautiful, responsive websites. Check out my latest work.",
+      "Self-taught junior web developer passionate about UI design and problem-solving. Check out my latest work.",
     images: ["/og-image.png"],
     creator: "@zeru",
   },
@@ -93,9 +93,9 @@ const personSchema = {
   url: BASE_URL,
   image: `${BASE_URL}/profile.jpg`,
   sameAs: ["https://github.com", "https://linkedin.com", "https://x.com"],
-  jobTitle: "Full Stack Web Developer",
+  jobTitle: "Junior Web Developer",
   description:
-    "Full-stack web developer specializing in React, Next.js, TypeScript, and modern UI/UX design.",
+    "Self-taught junior web developer passionate about UI design and problem-solving.",
   knowsAbout: [
     "React",
     "Next.js",
@@ -111,7 +111,7 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "Zeru Portfolio",
   url: BASE_URL,
-  description: "Portfolio website of Zeru — Full Stack Web Developer.",
+  description: "Portfolio website of Zeru — Junior Web Developer.",
   author: { "@type": "Person", name: "Zeru" },
 };
 
