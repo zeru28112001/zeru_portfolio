@@ -1,17 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { Button } from "../components/lightswind/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "../components/lightswind/card";
 import { Badge } from "../components/lightswind/badge";
 import { CountUp } from "../components/lightswind/count-up";
-import { Navbar, Footer } from "../components/layout";
+import { Footer } from "../components/layout";
 import SparkleNavbar from "../components/lightswind/sparkle-navbar";
 import {
   Collapsible,
@@ -23,13 +14,13 @@ import {
   SKILLS,
   TOOLS,
   STATS,
-  SOCIAL_LINKS,
   HERO_CONTENT,
   NAV_LINKS,
   ABOUT_ME,
   TIMELINE,
   OFFERS,
   FAQS,
+  getProjectPath,
 } from "../data";
 import { GridBackground } from "../components/lightswind/grid-dot-backgrounds";
 import { motion } from "framer-motion";
@@ -85,16 +76,8 @@ const FadeUp = ({
 
 export default function HomePage() {
   const router = useRouter();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   const SKILL_ICONS = [Code, Layers, Server, Zap, Database, Container];
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <div
@@ -126,24 +109,14 @@ export default function HomePage() {
               <span className="w-2.5 h-2.5 bg-green-400 mr-2 rounded-full animate-pulse" />
               {HERO_CONTENT.badge}
             </Badge>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mt-5 fade-up delay-2">
-              {HERO_CONTENT.title.split(" ").map((word, i) => (
-                <span
-                  key={i}
-                  className={
-                    word === "digital" || word === "things"
-                      ? "gradient-text"
-                      : ""
-                  }
-                >
-                  {word} {i === 2 && <br />}
-                </span>
-              ))}
+            <h1 className="text-5xl mx-auto text-center md:text-left md:text-6xl lg:text-7xl font-extrabold leading-tight mt-5 fade-up delay-2">
+              <span className="block">{HERO_CONTENT.title}</span>
+              <span className="block mt-2 hero-name-text">{HERO_CONTENT.name}</span>
             </h1>
-            <p className="mt-6 text-white/55 text-lg leading-relaxed fade-up delay-3 max-w-md">
+            <p className="mt-6 mx-auto md:mx-0 text-white/55 text-lg leading-relaxed fade-up delay-3 max-w-md text-justify">
               {HERO_CONTENT.bio}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3 fade-up delay-4">
+            <div className="mt-8 flex flex-wrap gap-3 fade-up delay-4 justify-center md:justify-start">
               <MagneticButton
                 onClick={() => router.push("/projects")}
                 variant="primary"
@@ -152,7 +125,7 @@ export default function HomePage() {
                 View Projects
               </MagneticButton>
               <MagneticButton
-                onClick={() => window.open("/resume.pdf", "_blank")}
+                onClick={() => window.open("/WaiYanKoKoResume.pdf", "_blank")}
                 variant="outline"
                 className="border-white/10 hover:bg-white/5"
               >
@@ -161,7 +134,7 @@ export default function HomePage() {
             </div>
 
             {/* Stats row */}
-            <div className="mt-12 flex gap-10 fade-up delay-4">
+            <div className="mt-12 flex gap-10 fade-up delay-4 justify-center md:justify-start">
               {STATS.map(({ value, suffix, label }) => (
                 <div key={label}>
                   <div
@@ -230,7 +203,7 @@ export default function HomePage() {
               slides={PROJECTS.map((p) => ({
                 id: p.id,
                 src: p.imageUrl,
-                href: p.link,
+                href: getProjectPath(p.id),
                 title: p.title,
                 description: p.description,
                 tags: p.tags,
@@ -389,7 +362,7 @@ export default function HomePage() {
               delay={0.2}
               className="text-center flex flex-col items-center md:items-start md:text-left justify-center"
             >
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed font-medium">
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed font-medium text-justify">
                 {ABOUT_ME}
               </p>
             </FadeUp>
@@ -493,17 +466,22 @@ export default function HomePage() {
                     key={i}
                     className="group w-full transition-all duration-300"
                   >
-                    <CollapsibleTrigger className="flex w-full items-center justify-between py-5 text-left outline-none">
-                      <span className="text-base md:text-lg font-medium text-white/80 group-hover:text-white tracking-tight transition-colors">
+                    <CollapsibleTrigger className="flex w-full items-center gap-4 py-5 text-left outline-none">
+                      <span className="flex-1 text-base md:text-lg font-medium text-white/80 group-hover:text-white tracking-tight transition-colors">
                         {faq.question}
                       </span>
-                      <Plus className="w-4 h-4 text-white/30 group-hover:text-white/70 group-data-[state=open]:rotate-45 group-data-[state=open]:text-white transition-all duration-300 ml-4 flex-shrink-0" />
+                      <span className="flex w-6 shrink-0 items-center justify-center">
+                        <Plus className="w-4 h-4 text-white/30 group-hover:text-white/70 group-data-[state=open]:rotate-45 group-data-[state=open]:text-white transition-all duration-300" />
+                      </span>
                     </CollapsibleTrigger>
 
                     <CollapsibleContent>
-                      <p className="text-white/50 text-base leading-relaxed max-w-2xl pr-8">
-                        {faq.answer}
-                      </p>
+                      <div className="flex px-12">
+                        <p className="flex-1 min-w-0 text-white/50 text-base leading-relaxed">
+                          {faq.answer}
+                        </p>
+                        <span className="w-6 shrink-0" aria-hidden="true" />
+                      </div>
                     </CollapsibleContent>
                   </Collapsible>
                 ),

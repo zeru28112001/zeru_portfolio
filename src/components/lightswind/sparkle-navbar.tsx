@@ -94,13 +94,12 @@ const SparkleNavbar: React.FC<SparkleNavbarProps> = ({
     const oldButton = buttonRefs.current[activeIndex];
     const newButton = buttonRefs.current[index];
 
-    if (
-      index === activeIndex ||
-      !navElement ||
-      !activeElement ||
-      !oldButton ||
-      !newButton
-    ) {
+    if (!navElement || !activeElement || !oldButton || !newButton) {
+      return;
+    }
+
+    if (index === activeIndex) {
+      if (onSelect) onSelect(index);
       return;
     }
 

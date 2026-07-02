@@ -106,17 +106,28 @@ export const ScrollTimeline = ({
   const progressHeight = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
   useEffect(() => {
+    let frame = 0;
+
     const unsubscribe = scrollYProgress.on("change", (v) => {
-      const newIndex = Math.floor(v * events.length);
-      if (
-        newIndex !== activeIndex &&
-        newIndex >= 0 &&
-        newIndex < events.length
-      ) {
-        setActiveIndex(newIndex);
-      }
+      if (frame) return;
+
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        const newIndex = Math.floor(v * events.length);
+        if (
+          newIndex !== activeIndex &&
+          newIndex >= 0 &&
+          newIndex < events.length
+        ) {
+          setActiveIndex(newIndex);
+        }
+      });
     });
-    return () => unsubscribe();
+
+    return () => {
+      unsubscribe();
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, [scrollYProgress, events.length, activeIndex]);
 
   const getCardVariants = (index: number) => {

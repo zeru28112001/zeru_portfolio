@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import type { IOptions, RecursivePartial, MoveDirection } from "@tsparticles/engine"; // Import MoveDirection
+import type { Container, IOptions, RecursivePartial, MoveDirection } from "@tsparticles/engine"; // Import MoveDirection
 
 interface SparkleParticlesProps {
   className?: string;
@@ -54,6 +54,9 @@ export function SparkleParticles({
 }: SparkleParticlesProps) {
   const [isEngineReady, setIsEngineReady] = useState(false);
   const [activeColor, setActiveColor] = useState("#000000");
+  const [isVisible, setIsVisible] = useState(true);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const particlesContainerRef = useRef<Container | undefined>(undefined);
   const instanceId = useId();
 
   useEffect(() => {
@@ -84,6 +87,32 @@ export function SparkleParticles({
     return () => observer.disconnect();
   }, [particleColor]);
 
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { rootMargin: "160px" },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const container = particlesContainerRef.current;
+    if (!container) return;
+
+    if (isVisible) {
+      container.play();
+    } else {
+      container.pause();
+    }
+  }, [isVisible]);
+
   const mergedOptions: RecursivePartial<IOptions> = {
     background: {
       color: {
@@ -94,7 +123,7 @@ export function SparkleParticles({
       enable: false,
       zIndex: zIndexLevel,
     },
-    fpsLimit: 300,
+    fpsLimit: 60,
     interactivity: {
       events: {
         onClick: {
@@ -172,12 +201,20 @@ export function SparkleParticles({
   };
 
   return (
-    isEngineReady && (
-      <Particles
-        id={instanceId}
-        options={mergedOptions}
-        className={className}
-      />
-    )
+    <div ref={containerRef} className={className}>
+      {isEngineReady && (
+        <Particles
+          id={instanceId}
+          options={mergedOptions}
+          className="h-full w-full"
+          particlesLoaded={async (container) => {
+            particlesContainerRef.current = container;
+            if (!isVisible) {
+              container.pause();
+            }
+          }}
+        />
+      )}
+    </div>
   );
 }

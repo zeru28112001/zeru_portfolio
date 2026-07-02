@@ -48,6 +48,7 @@ const ParticleOrbitEffect: React.FC<ParticleOrbitEffectProps> = ({
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>(undefined);
+  const isActiveRef = useRef(true);
   const particlesRef = useRef<Particle[]>([]);
   const mouseRef = useRef({
     x: 0,
@@ -149,6 +150,11 @@ const ParticleOrbitEffect: React.FC<ParticleOrbitEffectProps> = ({
     // Animation loop
     const draw = () => {
       if (!context || !canvas) return;
+
+      if (!isActiveRef.current) {
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
 
       // Update color timer for auto colors
       if (autoColors) {
@@ -261,11 +267,22 @@ const ParticleOrbitEffect: React.FC<ParticleOrbitEffectProps> = ({
     // Start animation
     animationRef.current = requestAnimationFrame(draw);
 
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncActiveState = () => {
+      isActiveRef.current = !document.hidden && !motionQuery.matches;
+    };
+
+    syncActiveState();
+    document.addEventListener("visibilitychange", syncActiveState);
+    motionQuery.addEventListener("change", syncActiveState);
+
     // Cleanup
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
+      document.removeEventListener("visibilitychange", syncActiveState);
+      motionQuery.removeEventListener("change", syncActiveState);
       window.removeEventListener("resize", updateCanvasDimensions);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mousedown", handleMouseDown);

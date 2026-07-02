@@ -63,16 +63,33 @@ export const InteractiveGradient = ({
   useEffect(() => {
     if (!followMouse) return;
 
+    const card = cardRef.current;
+    if (!card) return;
+
+    let frame = 0;
+
     const handleMouseMove = (e: MouseEvent) => {
-      if (!cardRef.current || (hoverOnly && !isHovering)) return;
-      const rect = cardRef.current.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      setPosition({ x, y });
+      if (hoverOnly && !isHovering) return;
+      if (frame) return;
+
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        if (!cardRef.current) return;
+
+        const rect = cardRef.current.getBoundingClientRect();
+        setPosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    card.addEventListener("mousemove", handleMouseMove, { passive: true });
+
+    return () => {
+      card.removeEventListener("mousemove", handleMouseMove);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, [followMouse, hoverOnly, isHovering]);
 
   const getBackgroundStyle = (): React.CSSProperties => {

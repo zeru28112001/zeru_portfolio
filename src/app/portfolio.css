@@ -67,6 +67,13 @@ h1, h2, h3, nav {
   background-clip: text;
 }
 
+.hero-name-text {
+  background: linear-gradient(135deg, #5b8cff 0%, #173eff 50%, #a8bfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .hero-glow {
   position: absolute;
   border-radius: 50%;

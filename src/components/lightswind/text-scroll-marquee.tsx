@@ -35,6 +35,8 @@ export default function TextScrollMarquee({
   delay = 0,
   direction = "left",
 }: TextScrollMarqueeProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isVisibleRef = useRef(true);
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -64,8 +66,23 @@ export default function TextScrollMarquee({
     directionFactor.current = direction === "left" ? 1 : -1;
   }, [direction]);
 
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { rootMargin: "120px" },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   useAnimationFrame((t, delta) => {
-    if (!hasStarted.current) return;
+    if (!hasStarted.current || !isVisibleRef.current) return;
 
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
@@ -83,7 +100,10 @@ export default function TextScrollMarquee({
   });
 
   return (
-    <div className="overflow-hidden whitespace-nowrap flex flex-nowrap">
+    <div
+      ref={containerRef}
+      className="overflow-hidden whitespace-nowrap flex flex-nowrap"
+    >
       <motion.div
         className="flex whitespace-nowrap gap-10 flex-nowrap"
         style={{ x }}

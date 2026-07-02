@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Navbar, Footer } from "../../components/layout";
-import { PROJECTS, NAV_LINKS } from "../../data";
+import { PROJECTS, NAV_LINKS, getProjectPath } from "../../data";
 import SparkleNavbar from "../../components/lightswind/sparkle-navbar";
 import {
   Card,
@@ -14,6 +14,7 @@ import ScrollReveal from "../../components/lightswind/scroll-reveal";
 import { GridBackground } from "../../components/lightswind/grid-dot-backgrounds";
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function ProjectsPage() {
   const router = useRouter();
@@ -57,9 +58,9 @@ export default function ProjectsPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             {PROJECTS.map((p, i) => (
-              <a
+              <Link
                 key={p.id}
-                href={p.link}
+                href={getProjectPath(p.id)}
                 className="no-underline group"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
@@ -105,7 +106,7 @@ export default function ProjectsPage() {
                     ))}
                   </div>
                 </Card>
-              </a>
+              </Link>
             ))}
           </div>
         </section>

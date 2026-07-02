@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Zeru Portfolio",
   },
   description:
-    "Self-taught junior web developer passionate about UI design and problem-solving. Explore my portfolio, projects, and skills.",
+    "Self-taught junior web developer passionate about UI design and problem-solving. Building APIs and web apps with NestJS, React, and modern tools.",
   icons: {
     icon: "/profile.jpg",
     shortcut: "/profile.jpg",
@@ -31,17 +31,19 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Web Developer",
-    "Frontend Developer",
     "Junior Web Developer",
-    "Zeru",
-    "Portfolio",
+    "NestJS",
     "React",
-    "Next.js",
     "TypeScript",
+    "Prisma",
+    "PostgreSQL",
+    "Laravel",
+    "PHP",
+    "Node.js",
     "TailwindCSS",
     "UI/UX Design",
-    "Node.js",
-    "Web Design",
+    "Zeru",
+    "Portfolio",
   ],
   authors: [{ name: "Zeru", url: BASE_URL }],
   creator: "Zeru",
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Zeru | Junior Web Developer",
     description:
-      "Self-taught junior web developer passionate about UI design and problem-solving. Check out my latest work.",
+      "Self-taught junior web developer building APIs and web apps with NestJS, React, and modern tools.",
     url: BASE_URL,
     siteName: "Zeru Portfolio",
     images: [
@@ -69,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Zeru | Junior Web Developer",
     description:
-      "Self-taught junior web developer passionate about UI design and problem-solving. Check out my latest work.",
+      "Self-taught junior web developer building APIs and web apps with NestJS, React, and modern tools.",
     images: ["/og-image.png"],
     creator: "@zeru",
   },
@@ -95,12 +97,16 @@ const personSchema = {
   sameAs: ["https://github.com", "https://linkedin.com", "https://x.com"],
   jobTitle: "Junior Web Developer",
   description:
-    "Self-taught junior web developer passionate about UI design and problem-solving.",
+    "Self-taught junior web developer building APIs and web apps with NestJS, React, and modern tools.",
   knowsAbout: [
+    "NestJS",
     "React",
-    "Next.js",
     "TypeScript",
+    "Prisma",
+    "PostgreSQL",
     "Node.js",
+    "PHP",
+    "Laravel",
     "Web Design",
     "UI/UX",
   ],
