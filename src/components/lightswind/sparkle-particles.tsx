@@ -202,16 +202,13 @@ export function SparkleParticles({
 
   return (
     <div ref={containerRef} className={className}>
-      {isEngineReady && (
+      {isEngineReady && isVisible && (
         <Particles
           id={instanceId}
           options={mergedOptions}
           className="h-full w-full"
           particlesLoaded={async (container) => {
             particlesContainerRef.current = container;
-            if (!isVisible) {
-              container.pause();
-            }
           }}
         />
       )}
