@@ -23,34 +23,11 @@ export const GridBackground = ({
   fadeIntensity = 20,
   ...props
 }: GridBackgroundProps) => {
-  const [currentGridColor, setCurrentGridColor] = useState(gridColor);
+  const [currentGridColor, setCurrentGridColor] = useState(darkGridColor);
 
   useEffect(() => {
-    const prefersDarkMode =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDarkModeActive =
-      document.documentElement.classList.contains("dark") || prefersDarkMode;
-    setCurrentGridColor(isDarkModeActive ? darkGridColor : gridColor);
-
-    const observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        if (mutation.attributeName === "class") {
-          const updatedIsDarkModeActive =
-            document.documentElement.classList.contains("dark");
-          setCurrentGridColor(
-            updatedIsDarkModeActive ? darkGridColor : gridColor
-          );
-        }
-      });
-    });
-
-    observer.observe(document.documentElement, { attributes: true });
-
-    return function () {
-      return observer.disconnect();
-    };
-  }, [gridColor, darkGridColor]);
+    setCurrentGridColor(darkGridColor);
+  }, [darkGridColor]);
 
   return (
     <div
@@ -76,7 +53,7 @@ export const GridBackground = ({
 
       {showFade && (
         <div
-          className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white dark:bg-black"
+          className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[#11131B]"
           style={{
             maskImage:
               "radial-gradient(ellipse at center, transparent " +
@@ -117,37 +94,16 @@ export const DotBackground = ({
   fadeIntensity = 20,
   ...props
 }: DotBackgroundProps) => {
-  const [currentDotColor, setCurrentDotColor] = useState(dotColor);
+  const [currentDotColor, setCurrentDotColor] = useState(darkDotColor);
 
   useEffect(() => {
-    const prefersDarkMode =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDarkModeActive =
-      document.documentElement.classList.contains("dark") || prefersDarkMode;
-    setCurrentDotColor(isDarkModeActive ? darkDotColor : dotColor);
-
-    const observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        if (mutation.attributeName === "class") {
-          const updatedIsDarkModeActive =
-            document.documentElement.classList.contains("dark");
-          setCurrentDotColor(updatedIsDarkModeActive ? darkDotColor : dotColor);
-        }
-      });
-    });
-
-    observer.observe(document.documentElement, { attributes: true });
-
-    return function () {
-      return observer.disconnect();
-    };
-  }, [dotColor, darkDotColor]);
+    setCurrentDotColor(darkDotColor);
+  }, [darkDotColor]);
 
   return (
     <div
       className={cn(
-        "relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black",
+        "relative flex h-[50rem] w-full items-center justify-center bg-[#11131B]",
         className
       )}
       {...props}
@@ -169,7 +125,7 @@ export const DotBackground = ({
 
       {showFade && (
         <div
-          className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white dark:bg-black"
+          className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[#11131B]"
           style={{
             maskImage:
               "radial-gradient(ellipse at center, transparent " +
