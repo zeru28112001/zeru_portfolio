@@ -19,11 +19,11 @@ const BASE_URL = "https://zeru.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Zeru | Junior Web Developer",
+    default: "Zeru | Full Stack Developer",
     template: "%s | Zeru Portfolio",
   },
   description:
-    "Self-taught junior web developer passionate about UI design and problem-solving. Building APIs and web apps with NestJS, React, and modern tools.",
+    "Self-taught full stack developer passionate about UI design and problem-solving. Building APIs and web apps with NestJS, React, and modern tools.",
   icons: {
     icon: "/profile.jpg",
     shortcut: "/profile.jpg",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Web Developer",
-    "Junior Web Developer",
+    "Full Stack Developer",
     "NestJS",
     "React",
     "TypeScript",
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Zeru | Junior Web Developer",
+    title: "Zeru | Full Stack Developer",
     description:
-      "Self-taught junior web developer building APIs and web apps with NestJS, React, and modern tools.",
+      "Self-taught full stack developer building APIs and web apps with NestJS, React, and modern tools.",
     url: BASE_URL,
     siteName: "Zeru Portfolio",
     images: [
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Zeru — Junior Web Developer Portfolio",
+        alt: "Zeru — Full Stack Developer Portfolio",
       },
     ],
     locale: "en_US",
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zeru | Junior Web Developer",
+    title: "Zeru | Full Stack Developer",
     description:
-      "Self-taught junior web developer building APIs and web apps with NestJS, React, and modern tools.",
+      "Self-taught full stack developer building APIs and web apps with NestJS, React, and modern tools.",
     images: ["/og-image.png"],
     creator: "@zeru",
   },
@@ -95,9 +95,9 @@ const personSchema = {
   url: BASE_URL,
   image: `${BASE_URL}/profile.jpg`,
   sameAs: ["https://github.com", "https://linkedin.com", "https://x.com"],
-  jobTitle: "Junior Web Developer",
+  jobTitle: "Full Stack Developer",
   description:
-    "Self-taught junior web developer building APIs and web apps with NestJS, React, and modern tools.",
+    "Self-taught full stack developer building APIs and web apps with NestJS, React, and modern tools.",
   knowsAbout: [
     "NestJS",
     "React",
@@ -117,7 +117,7 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "Zeru Portfolio",
   url: BASE_URL,
-  description: "Portfolio website of Zeru — Junior Web Developer.",
+  description: "Portfolio website of Zeru — Full Stack Developer.",
   author: { "@type": "Person", name: "Zeru" },
 };
 

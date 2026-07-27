@@ -5,10 +5,10 @@ export const NAV_LINKS = [
 ];
 
 export const HERO_CONTENT = {
-  title: "Junior Web Developer",
+  title: "Full Stack Developer",
   name: "Wai Yan Ko Ko",
   badge: "Open to Opportunities",
-  bio: "Self-taught web developer passionate about UI design and problem-solving. I build real-world web applications with NestJS, React, PHP, and modern web technologies.",
+  bio: "Self-taught web developer passionate about UI design and problem-solving. I build real-world web applications with NestJS, React, NextJS, NodeJS, PHP, and modern web technologies.",
   heroImage: "/profile.jpg",
   aboutImage: "/image.png",
 };
@@ -246,8 +246,8 @@ export const TOOLS = [
 
 // Stats data for the hero section
 export const STATS = [
-  { value: 4, suffix: "+", label: "Years learning" },
-  { value: 9, suffix: "+", label: "Projects built" },
+  { value: 3, suffix: "+", label: "Years learning" },
+  { value: 9, suffix: "", label: "Projects built" },
   { value: 3, suffix: "+", label: "Freelance projects" },
 ];
 
@@ -259,7 +259,7 @@ export const SOCIAL_LINKS = [
 ];
 
 export const ABOUT_ME =
-  "I am a junior web developer with a strong passion for building functional and user-friendly web applications. I have hands-on experience building backend APIs and admin dashboards with NestJS and React, along with PHP and Laravel projects. Currently pursuing Level 5 Computing and Physics, I enjoy solving real-world problems through code and continuously improving my development skills.";
+  "I am a full stack developer with a strong passion for building functional and user-friendly web applications. I have hands-on experience building backend APIs and admin dashboards with NestJS and React, along with PHP and Laravel projects. Currently pursuing Level 5 Computing and Physics, I enjoy solving real-world problems through code and continuously improving my development skills.";
 
 export const TIMELINE = [
   {
@@ -318,7 +318,7 @@ export const FAQS = [
   {
     question: "Who are you?",
     answer:
-      "I am Wai Yan Ko Ko, a junior web developer who enjoys building practical web applications, backend APIs, and admin dashboards.",
+      "I am Wai Yan Ko Ko, a full stack developer who enjoys building practical web applications, backend APIs, and admin dashboards.",
   },
   {
     question: "What technologies do you use?",
@@ -328,6 +328,6 @@ export const FAQS = [
   {
     question: "Are you available for work?",
     answer:
-      "Yes, I am open to internships, junior roles, and freelance opportunities.",
+      "Yes, I am open to full stack developer roles and freelance opportunities.",
   },
 ];
