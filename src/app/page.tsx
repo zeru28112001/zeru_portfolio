@@ -125,7 +125,7 @@ export default function HomePage() {
                 View Projects
               </MagneticButton>
               <MagneticButton
-                onClick={() => window.open("/WaiYanKoKo.pdf", "_blank")}
+                onClick={() => window.open("/z3ru180.pdf", "_blank")}
                 variant="outline"
                 className="border-white/10 hover:bg-white/5"
               >
