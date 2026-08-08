@@ -28,6 +28,73 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    id: 11,
+    title: "BuildSafe Hub",
+    brand: "TanStack Start + Supabase",
+    description:
+      "Full-stack structural-safety SaaS for pre-construction building design — multi-step project intake, live strength scoring, 3D floor plans, AI-assisted analysis, and MMK plan checkout with payment-proof review.",
+    longDescription:
+      "Built BuildSafe end-to-end as a TanStack Start (React SSR) + Supabase app for safer building design before groundbreaking. Users create projects through a 7-step wizard (land, structure, materials, safety), map sites with Leaflet, edit interactive 3D / floor-plan layouts (Three.js), and get deterministic structural strength scores plus Myanmar-focused geo-hazard checks. Added Free/Pro entitlements, referral AI credits, material cost estimates, bilingual EN/MY UX, and a manual payment-proof flow (bank/mobile methods) reviewed in admin and via Telegram approve/reject. Also shipped an admin ops panel (users, projects, plans, payments, materials, audit logs) with RLS-backed Postgres, private blueprint/payment Storage uploads, and edge functions for AI assistant actions.",
+    features: [
+      "7-step project wizard — land/site, structural inputs, materials, safety checklist, draft saves to Supabase",
+      "Interactive design tools — Leaflet GPS picker, Three.js 3D building preview, floor-plan editor with L-shape rooms",
+      "Structural intelligence — live strength scoring, predictive hazard checklist, exportable safety & analysis reports",
+      "AI assistant flows — strength, materials, design generation, furniture layout (edge function + persisted analyses)",
+      "Subscriptions & referrals — Free/Pro plan gates, MMK pricing, payment-proof upload, Telegram two-way review",
+      "Cost & catalog — material quantities × unit prices, bilingual material/category names, BOM/CSV exports",
+      "Admin operations — users, projects, plans, payment methods/reviews, referrals, AI logs, audit trail",
+      "Platform work — Supabase Auth + device/IP throttle, RLS, private Storage uploads, TanStack Query + Zod forms",
+    ],
+    tags: [
+      "TanStack Start",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Three.js",
+      "Leaflet",
+      "TanStack Query",
+      "Zod",
+      "Tailwind CSS",
+    ],
+    imageUrl: "/projects/buildsafe.png",
+  },
+  {
+    id: 10,
+    title: "Stream Studio",
+    brand: "Express + Next.js",
+    description:
+      "Built a full-stack video streaming platform end-to-end — live RTMP/HLS with real-time chat, VOD upload, RAG + vector search, AI tool-calling chat, and an admin panel.",
+    longDescription:
+      "Designed and shipped Stream Studio as a solo full-stack project: Express.js REST API + Socket.io backend, Next.js App Router frontend, and MongoDB with Prisma. Live streaming uses Nginx-RTMP ingest, stream-key validation via webhooks, HLS playback (hls.js), and ephemeral Socket.io chat with viewer counts and owner studio controls. VOD covers Multer uploads, FFmpeg thumbnails, local @xenova/transformers embeddings, and MongoDB Atlas vector search. AI layer includes RAG (`POST /api/rag/query` — retrieve similar content then answer via OpenRouter or template fallback) and an LLM tool-calling chat (`POST /api/chat`) for semantic search, watchlist add/remove, and watch history. Also implemented an MCP stdio server exposing the same AI tools (search, watchlist, history) for external clients like Cursor. Additional work: JWT auth, follow/live notifications, admin (users, content, streams, settings), plus TanStack Query + Zod on key frontend paths.",
+    features: [
+      "Live streaming — OBS/Streamlabs RTMP ingest, Nginx-RTMP → HLS, on_publish stream-key validation, owner studio",
+      "Real-time chat — Socket.io rooms, viewer count / peak viewers, chat mute, stream-end chat clear",
+      "VOD pipeline — Multer local upload, FFmpeg thumbnail extract, Content embeddings",
+      "RAG — embed query, Atlas / local vector retrieve, OpenRouter natural-language answer (`/api/rag/query`)",
+      "AI chat + tools — OpenRouter tool loop: search_similar_content, add/remove watchlist, get_watch_history",
+      "MCP server — stdio tools mirroring the same AI/watchlist actions for Cursor / MCP clients",
+      "Social & alerts — follow creators, persisted live-start notifications + realtime bell",
+      "Admin panel — ban/unban/delete users, hide/delete content, force-end streams, AI/chat/upload settings",
+    ],
+    tags: [
+      "Express.js",
+      "Next.js",
+      "Prisma",
+      "MongoDB",
+      "Socket.io",
+      "Nginx-RTMP",
+      "HLS",
+      "RAG",
+      "Vector Search",
+      "OpenRouter",
+      "MCP",
+      "TanStack Query",
+      "Zod",
+    ],
+    imageUrl: "/projects/stream-studio.png",
+  },
+  {
     id: 9,
     title: "MyTogether Admin & API",
     brand: "NestJS + React",
