@@ -28,6 +28,36 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    id: 12,
+    title: "Htoo Delivery Services",
+    brand: "TanStack Start + Supabase",
+    description:
+      "Full-stack logistics management platform featuring automated Telegram alert broadcasting, mobile PWA driver tracking, multi-currency financial reporting, and digital PNG voucher generation.",
+    longDescription:
+      "Built Htoo Delivery end-to-end as a TanStack Start (React SSR) + Supabase application for multi-regional logistics and driver dispatch management. Features an automated Telegram alert engine with smart noise-filtering for real-time security incident (401/403/429) and server crash monitoring. Includes an installable mobile Driver PWA with direct phone triggers, dynamic rate cards (MMK & THB), a high-res PNG digital voucher generator (`html-to-image`), real-time financial KPI analytics with one-click `.xlsx` Excel exports, and persistent rate-limiting security.",
+    features: [
+      "Admin operations panel — order dispatching, driver assignments, delivery status tracking, and audit logs",
+      "Driver mobile PWA — installable dashboard with phone dialer triggers, delivery tasks, and live status toggles",
+      "Automated Telegram alerts — noise-filtered monitoring engine broadcasting security threats and system exceptions",
+      "Digital voucher engine — computes fees and COD terms to generate downloadable PNG receipts for messaging apps",
+      "Delivery zones & rate cards — dynamic flat-fee and weight-based pricing for local and international MMK & THB rates",
+      "Analytics & Excel reporting — live revenue dashboards, driver performance breakdowns, and raw `.xlsx` data exports",
+    ],
+    tags: [
+      "TanStack Start",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Telegram Bot API",
+      "TanStack Query",
+      "Tailwind CSS",
+      "PWA",
+      "Zod",
+    ],
+    imageUrl: "/projects/deli.jpg",
+  },
+  {
     id: 11,
     title: "BuildSafe Hub",
     brand: "TanStack Start + Supabase",
