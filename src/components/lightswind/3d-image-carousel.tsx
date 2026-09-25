@@ -337,9 +337,9 @@ export const ThreeDImageCarousel: React.FC<ThreeDImageCarouselProps> = ({
                   }}
                 />
                 {slide.title && (
-                  <div className="slide-details absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-[#11131B] via-[#11131B]/80 to-transparent">
+                  <div className="slide-details absolute inset-0 flex flex-col justify-end p-4 md:p-6 bg-gradient-to-t from-[#11131B] via-[#11131B]/80 to-transparent">
                     {slide.tags && slide.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-3">
+                      <div className="hidden md:flex flex-wrap gap-2 mb-3">
                         {slide.tags.slice(0, 2).map((tag, idx) => (
                           <span
                             key={idx}
@@ -351,13 +351,13 @@ export const ThreeDImageCarousel: React.FC<ThreeDImageCarouselProps> = ({
                       </div>
                     )}
                     <h3
-                      className="text-xl md:text-2xl font-bold text-white mb-2"
+                      className="text-lg md:text-2xl font-bold text-white mb-0 md:mb-2"
                       style={{ fontFamily: "Syne, sans-serif" }}
                     >
                       {slide.title}
                     </h3>
                     {slide.description && (
-                      <p className="text-sm text-white/70">
+                      <p className="hidden md:block text-sm text-white/70">
                         {slide.description}
                       </p>
                     )}
