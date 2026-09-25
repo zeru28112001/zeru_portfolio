@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const BASE_URL = "https://zeru.dev";
+const BASE_URL = "https://waiyankoko.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Zeru | Full Stack Developer",
-    template: "%s | Zeru Portfolio",
+    default: "Wai Yan Ko Ko | Full Stack Developer",
+    template: "%s | Wai Yan Ko Ko Portfolio",
   },
   description:
     "Self-taught full stack developer passionate about UI design and problem-solving. Building APIs and web apps with NestJS, React, and modern tools.",
@@ -42,26 +42,27 @@ export const metadata: Metadata = {
     "Node.js",
     "TailwindCSS",
     "UI/UX Design",
+    "Wai Yan Ko Ko",
     "Zeru",
     "Portfolio",
   ],
-  authors: [{ name: "Zeru", url: BASE_URL }],
-  creator: "Zeru",
+  authors: [{ name: "Wai Yan Ko Ko", url: BASE_URL }],
+  creator: "Wai Yan Ko Ko",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Zeru | Full Stack Developer",
+    title: "Wai Yan Ko Ko | Full Stack Developer",
     description:
       "Self-taught full stack developer building APIs and web apps with NestJS, React, and modern tools.",
     url: BASE_URL,
-    siteName: "Zeru Portfolio",
+    siteName: "Wai Yan Ko Ko Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Zeru — Full Stack Developer Portfolio",
+        alt: "Wai Yan Ko Ko — Full Stack Developer Portfolio",
       },
     ],
     locale: "en_US",
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zeru | Full Stack Developer",
+    title: "Wai Yan Ko Ko | Full Stack Developer",
     description:
       "Self-taught full stack developer building APIs and web apps with NestJS, React, and modern tools.",
     images: ["/og-image.png"],
@@ -91,10 +92,14 @@ export const metadata: Metadata = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Zeru",
+  name: "Wai Yan Ko Ko",
   url: BASE_URL,
   image: `${BASE_URL}/profile.jpg`,
-  sameAs: ["https://github.com", "https://linkedin.com", "https://x.com"],
+  sameAs: [
+    "https://www.linkedin.com/in/wai-yan-ko-ko-66a739284/",
+    "https://github.com/zeru28112001",
+    "https://www.facebook.com/zeru.11",
+  ],
   jobTitle: "Full Stack Developer",
   description:
     "Self-taught full stack developer building APIs and web apps with NestJS, React, and modern tools.",
@@ -115,10 +120,10 @@ const personSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Zeru Portfolio",
+  name: "Wai Yan Ko Ko Portfolio",
   url: BASE_URL,
-  description: "Portfolio website of Zeru — Full Stack Developer.",
-  author: { "@type": "Person", name: "Zeru" },
+  description: "Portfolio website of Wai Yan Ko Ko — Full Stack Developer.",
+  author: { "@type": "Person", name: "Wai Yan Ko Ko" },
 };
 
 export default function RootLayout({

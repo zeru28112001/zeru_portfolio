@@ -25,7 +25,7 @@ export async function generateMetadata({
     title: project.title,
     description: project.description,
     openGraph: {
-      title: `${project.title} | Zeru Portfolio`,
+      title: `${project.title} | Wai Yan Ko Ko Portfolio`,
       description: project.description,
       images: [{ url: project.imageUrl }],
     },

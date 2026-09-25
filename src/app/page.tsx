@@ -113,7 +113,7 @@ export default function HomePage() {
               <span className="block">{HERO_CONTENT.title}</span>
               <span className="block mt-2 hero-name-text">{HERO_CONTENT.name}</span>
             </h1>
-            <p className="mt-6 mx-auto md:mx-0 text-white/55 text-lg leading-relaxed fade-up delay-3 max-w-md text-justify">
+            <p className="mt-6 mx-auto md:mx-0 text-white/55 text-lg leading-relaxed fade-up delay-3 max-w-md px-2">
               {HERO_CONTENT.bio}
             </p>
             <div className="mt-8 flex flex-wrap gap-3 fade-up delay-4 justify-center md:justify-start">
@@ -392,7 +392,7 @@ export default function HomePage() {
                   <div className="p-4 bg-[#173eff]/10 rounded-2xl text-[#173eff] w-fit shadow-[0_0_20px_rgba(23,62,255,0.15)]">
                     {
                       [<Code key="c" />, <Layers key="l" />, <Zap key="z" />][
-                        i % 3
+                      i % 3
                       ]
                     }
                   </div>
@@ -460,31 +460,30 @@ export default function HomePage() {
 
           <FadeUp delay={0.2} className="w-full">
             <div className="divide-y divide-white/10 border-y border-white/10">
-              {FAQS.filter((faq) => faq.question !== "Who is Zeru?").map(
-                (faq, i) => (
-                  <Collapsible
-                    key={i}
-                    className="group w-full transition-all duration-300"
-                  >
-                    <CollapsibleTrigger className="flex w-full items-center gap-4 py-5 text-left outline-none">
-                      <span className="flex-1 text-base md:text-lg font-medium text-white/80 group-hover:text-white tracking-tight transition-colors">
-                        {faq.question}
-                      </span>
-                      <span className="flex w-6 shrink-0 items-center justify-center">
-                        <Plus className="w-4 h-4 text-white/30 group-hover:text-white/70 group-data-[state=open]:rotate-45 group-data-[state=open]:text-white transition-all duration-300" />
-                      </span>
-                    </CollapsibleTrigger>
+              {FAQS.map((faq, i) => (
+                <Collapsible
+                  key={i}
+                  className="group w-full transition-all duration-300"
+                >
+                  <CollapsibleTrigger className="flex w-full items-center gap-4 py-5 text-left outline-none">
+                    <span className="flex-1 text-base md:text-lg font-medium text-white/80 group-hover:text-white tracking-tight transition-colors">
+                      {faq.question}
+                    </span>
+                    <span className="flex w-6 shrink-0 items-center justify-center">
+                      <Plus className="w-4 h-4 text-white/30 group-hover:text-white/70 group-data-[state=open]:rotate-45 group-data-[state=open]:text-white transition-all duration-300" />
+                    </span>
+                  </CollapsibleTrigger>
 
-                    <CollapsibleContent>
-                      <div className="flex px-12">
-                        <p className="flex-1 min-w-0 text-white/50 text-base leading-relaxed">
-                          {faq.answer}
-                        </p>
-                        <span className="w-6 shrink-0" aria-hidden="true" />
-                      </div>
-                    </CollapsibleContent>
-                  </Collapsible>
-                ),
+                  <CollapsibleContent>
+                    <div className="flex px-12">
+                      <p className="flex-1 min-w-0 text-white/50 text-base leading-relaxed">
+                        {faq.answer}
+                      </p>
+                      <span className="w-6 shrink-0" aria-hidden="true" />
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              ),
               )}
             </div>
           </FadeUp>
