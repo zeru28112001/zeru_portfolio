@@ -363,16 +363,16 @@ export const SOCIAL_LINKS = [
 ];
 
 export const ABOUT_ME =
-  "I am a self-taught Full Stack Developer with 2+ years of hands-on experience building web applications with React, Next.js, Node.js (NestJS/Express), and Laravel. I specialize in delivering real-world e-commerce, delivery, logistics, and management platforms with REST APIs, authentication, admin panels, and 2-way Telegram bot automation. I have practical experience integrating LLMs, engineering real-time customer-driver chat with Socket.IO, and deploying and maintaining applications on Ubuntu Linux servers. Currently pursuing Level 4 & 5 Computing (BTEC / Pearson, NCC) and BSc Physics at Mandalar University, I am committed to clean architecture, high performance, and continuous learning.";
+  "I am a self-taught Full Stack Developer with 2+ years of hands-on experience building web applications with React, Next.js, Node.js (NestJS/Express), and Laravel. I specialize in delivering real-world e-commerce, delivery, logistics, and management platforms with REST APIs, authentication, admin panels, and 2-way Telegram bot automation. I have practical experience integrating LLMs, engineering real-time customer-driver chat with Socket.IO, and deploying and maintaining applications on Ubuntu Linux servers. Completed Level 4 & 5 Diploma in Computing (BTEC / Pearson, NCC) in July 2026, and currently pursuing BSc Physics at Mandalar University, I am committed to clean architecture, high performance, and continuous learning.";
 
 export const TIMELINE = [
   {
     title: "Level 4 & 5 Diploma in Computing",
     institution: "BTEC / Pearson, NCC Education",
-    date: "2024 - Present",
+    date: "2024 - July 2026",
     type: "Education",
     description:
-      "Higher national diploma in computing covering software engineering, database design, and systems development.",
+      "Graduated with Level 4 & 5 Diploma in Computing (Completed July 2026), covering software engineering, database design, and full-stack development.",
   },
   {
     title: "BSc Physics",

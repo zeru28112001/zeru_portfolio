@@ -128,6 +128,18 @@ const personSchema = {
     "Web Design",
     "UI/UX",
   ],
+  alumniOf: [
+    {
+      "@type": "EducationalOrganization",
+      "name": "BTEC / Pearson, NCC Education",
+      "description": "Level 4 & 5 Diploma in Computing (Completed July 2026)",
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Mandalar University",
+      "description": "BSc Physics",
+    },
+  ],
 };
 
 const websiteSchema = {
