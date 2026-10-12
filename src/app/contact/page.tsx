@@ -59,16 +59,19 @@ export default function ContactPage() {
             <div className="bg-[#181b27] rounded-[calc(1.5rem-4px)] p-12 md:p-20 text-center relative overflow-hidden">
               <ParticlesBackground height="100%" countDesktop={30} />
               <div className="relative z-10">
-                <p className="text-white/40 font-semibold uppercase tracking-widest text-sm mb-6">
+                <p className="text-white/40 font-semibold uppercase tracking-widest text-sm mb-4">
                   Direct Email
                 </p>
                 <a
-                  href="mailto:waiyan.koko.2811@gmail.com"
-                  className="text-3xl md:text-5xl font-bold hover:text-[var(--primarylw)] transition-colors break-all"
+                  href="mailto:zeru28112001@gmail.com"
+                  className="text-2xl md:text-4xl font-bold hover:text-[var(--primarylw)] transition-colors break-all"
                   style={{ fontFamily: "Syne, sans-serif" }}
                 >
-                  Let’s Work Together!
+                  zeru28112001@gmail.com
                 </a>
+                <p className="text-white/40 text-sm mt-3">
+                  Mandalay, Amarapura • Open to remote work
+                </p>
 
                 <div className="mt-12 flex flex-wrap justify-center gap-8">
                   {SOCIAL_LINKS.map((link) => (

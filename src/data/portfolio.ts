@@ -7,8 +7,8 @@ export const NAV_LINKS = [
 export const HERO_CONTENT = {
   title: "Full Stack Developer",
   name: "Wai Yan Ko Ko",
-  badge: "Open to Opportunities",
-  bio: "Self-taught web developer passionate about UI design and problem-solving. I build real-world web applications with NestJS, React, NextJS, NodeJS, PHP, and modern web technologies.",
+  badge: "Open to Remote Work",
+  bio: "Self-taught Full Stack Developer with 2+ years of hands-on experience building web applications with React, Next.js, Node.js (NestJS/Express), and Laravel. Delivering Telegram bot automation and Ubuntu Linux server deployments.",
   heroImage: "/profile.jpg",
   aboutImage: "/image.png",
 };
@@ -126,67 +126,67 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 9,
-    title: "MyTogether Admin & API",
+    title: "MyTogether Food Delivery System",
     brand: "NestJS + React",
     description:
-      "Contributed across backend APIs and the admin dashboard for a food-ordering platform — shops, orders, coupons, marketing, chat, and more — alongside 2 senior developers.",
+      "Built a food delivery backend system with NestJS REST APIs and React frontend, featuring Socket.IO real-time chat, order tracking, and indexed search.",
     longDescription:
-      "Worked with 2 senior developers on MyTogether’s NestJS REST API and React admin panel. Built and extended modules end-to-end: shop/restaurant onboarding, menus, orders (live board, pickup, delivery, status flows), shop coupons (admin CRUD, QR scan, wishlist, order discounts, expiry cron), subscription plans (admin + user pricing API), flash events, collections, news, visa/places, chat, wishlist, and shop feedback. Also delivered admin pages with Zod + TanStack Query, drag-and-drop ordering, Excel shop import, push broadcast, home discount sections, and CI/CD deploy to EC2. Additional work on auth (phone/device login, force logout), real-time orders (WebSocket, multi-device notifications), search/location (geolib), master menu categories, cities/districts/cuisines, image upload (S3), and pagination/security fixes across the API.",
+      "Full Stack Developer (Project-based, Remote, 2026) for My Together. Built a comprehensive food delivery backend system with NestJS REST APIs and a React frontend. Implemented authentication, restaurant and menu management, order processing, and real-time order status updates. Developed a real-time chat feature using Socket.IO for customer-driver communication and engineered fast restaurant and menu search using database indexing. Collaborated closely with 2 senior developers on architecture, PR reviews, migrations, and CI/CD deployment to AWS EC2.",
     features: [
-      "Shop coupon system — admin & user APIs, scan/redeem, order discount, early-bird rules, expiry cronjob",
-      "Subscription plans — plan/feature admin CRUD, reorder, user GET /user/plans for pricing page",
-      "Order operations — live order board, pickup/delivery flows, status rules, payment-slip alerts",
-      "Shop & menu admin — create/edit shops, menus, categories, tags, approvals, Excel import",
-      "Marketing & content — banners, flash events, collections, news, home discount sections, broadcast push",
-      "User-facing APIs — chat, wishlist, reviews, visa, places, search, location-based shop discovery",
-      "Platform work — auth/session management, WebSocket real-time orders, S3 image upload, CI/CD to EC2",
-      "Collaborated with 2 senior developers on architecture, PR reviews, migrations, and module design",
+      "NestJS REST APIs & React admin dashboard — full-stack food delivery operations",
+      "Real-time customer-driver chat — built with Socket.IO for live in-transit communications",
+      "Fast restaurant & menu search — accelerated query performance via database indexing",
+      "Order processing pipeline — live order board, pickup/delivery flows, and real-time status updates",
+      "Shop coupons & promotions — scan/redeem vouchers, early-bird discounts, and expiry cronjobs",
+      "Subscriptions & marketing — tier plans, banners, flash events, collections, and broadcast push",
+      "Security & infrastructure — session management, phone/device auth, S3 upload, and CI/CD to EC2",
     ],
     tags: [
       "NestJS",
-      "Prisma",
-      "PostgreSQL",
       "React",
       "TypeScript",
+      "Socket.IO",
+      "PostgreSQL",
+      "Prisma",
       "TanStack Query",
       "Zod",
-      "WebSocket",
       "Redis",
+      "AWS EC2",
     ],
     imageUrl: "/projects/mytogether.png",
   },
   {
     id: 1,
-    title: "WiFi Management System",
+    title: "Shwe Monywa Net",
     brand: "Laravel",
     description:
       "Developed a WiFi management system with supporter roles, payment handling, and admin dashboard for managing users and services.",
     longDescription:
-      "A complete WiFi service management platform built with Laravel. It supports multiple user roles, subscription payments, and a centralized admin dashboard for monitoring users, plans, and service status.",
+      "Developed Shwe Monywa Net (2024–2025) as a part-time full-stack developer. A complete WiFi service management platform built with Laravel featuring role-based access for supporters and admins, payment tracking, user and plan management, and centralized admin monitoring.",
     features: [
-      "Role-based access for admins and supporters",
-      "Payment handling and subscription tracking",
-      "User and service management dashboard",
-      "Plan assignment and usage monitoring",
+      "Role-based access for admins and supporter staff",
+      "Payment handling and subscription lifecycle tracking",
+      "User, voucher, and bandwidth plan management dashboard",
+      "Centralized service monitoring and administrative control",
     ],
-    tags: ["Laravel", "PHP", "MySQL"],
+    tags: ["Laravel", "PHP", "MySQL", "Admin Panel"],
     imageUrl: "/projects/wifi.png",
   },
   {
     id: 2,
-    title: "School Management System",
+    title: "StudySphere",
     brand: "Pure PHP",
     description:
-      "Built a school management system with features like student records, course management, and admin control panel.",
+      "Built StudySphere, a school management system with features like student records, course management, and admin control panel.",
     longDescription:
-      "A school administration system designed to simplify daily academic operations. It centralizes student data, course records, and staff workflows inside one manageable PHP application.",
+      "StudySphere is an academic administration system built with PHP and MySQL to streamline school operations. It centralizes student enrollment, academic courses, records, and staff workflows inside an organized and responsive portal.",
     features: [
-      "Student record and enrollment management",
+      "Student record and academic enrollment management",
       "Course and class scheduling",
-      "Admin control panel for staff",
-      "Searchable academic data storage",
+      "Admin control panel for staff and teachers",
+      "Searchable academic database and record storage",
     ],
-    tags: ["PHP", "MySQL"],
+    tags: ["PHP", "MySQL", "JavaScript"],
     imageUrl: "/projects/school.png",
   },
   {
@@ -276,20 +276,21 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 8,
-    title: "E-commerce System",
+    title: "Now Fashion — E-Commerce System",
     brand: "Freelance Project",
     description:
-      "Built a Full-Stack E-commerce Management system with 2-way Telegram automation, dynamic order tracking, and comprehensive administrative features.",
+      "Full-stack e-commerce management system with 2-way Telegram automation, dynamic order tracking, and comprehensive administrative features.",
     longDescription:
-      "A full-stack e-commerce platform with Laravel and React, featuring order management, JWT authentication, admin controls, and Telegram bot automation for customer updates.",
+      "Built Now Fashion end-to-end as a freelance full-stack developer (2026). The platform features 2-way Telegram automation for instant order notifications and customer communication, dynamic order tracking, JWT-secured authentication, product management, and full admin operations.",
     features: [
-      "Product and order management",
-      "JWT-secured authentication",
-      "Telegram bot automation for orders",
-      "Admin dashboard with dynamic tracking",
+      "Product catalog and multi-category inventory management",
+      "JWT-secured authentication and role controls",
+      "2-way Telegram bot automation for orders and customer alerts",
+      "Dynamic order tracking and live administrative dashboard",
     ],
-    tags: ["Laravel", "React", "MySQL", "JWT", "Telegram Bot"],
+    tags: ["Laravel", "React", "MySQL", "JWT", "Telegram Bot API"],
     imageUrl: "/projects/ecommerce.png",
+    liveUrl: "https://nowfashioncollection.com",
   },
 ];
 
@@ -303,49 +304,55 @@ export function getProjectPath(id: number) {
 
 export const SKILLS = [
   {
-    category: "Development",
+    category: "Backend & Systems",
     items: [
-      { name: "PHP / Laravel", level: 92 },
-      { name: "NestJS / Node.js", level: 78 },
-      { name: "React / TypeScript", level: 80 },
+      { name: "Node.js / NestJS / Express", level: 88 },
+      { name: "PHP / Laravel / REST APIs", level: 90 },
+      { name: "Ubuntu Linux / Deployment", level: 82 },
     ],
   },
   {
-    category: "Frontend & UI",
+    category: "Frontend & Mobile",
     items: [
-      { name: "HTML / CSS", level: 90 },
-      { name: "Tailwind / Bootstrap", level: 85 },
-      { name: "UI/UX Design", level: 60 },
+      { name: "React / Next.js / TypeScript", level: 90 },
+      { name: "Tailwind CSS / Bootstrap", level: 88 },
+      { name: "PWA / Flutter (basic)", level: 75 },
     ],
   },
   {
-    category: "Database & Tools",
+    category: "Databases & Automation",
     items: [
-      { name: "PostgreSQL / MySQL", level: 85 },
-      { name: "Prisma / REST APIs", level: 75 },
-      { name: "Git / GitHub", level: 75 },
+      { name: "PostgreSQL / MySQL", level: 88 },
+      { name: "Supabase / MongoDB / Prisma", level: 84 },
+      { name: "Telegram Bot / Socket.IO", level: 86 },
     ],
   },
 ];
 
 export const TOOLS = [
   "NestJS",
+  "Next.js",
   "React",
   "TypeScript",
-  "Prisma",
-  "PostgreSQL",
+  "Express.js",
   "Laravel",
+  "Supabase",
+  "PostgreSQL",
+  "MongoDB",
+  "Prisma",
+  "Socket.IO",
+  "Telegram Bot",
+  "Ubuntu Linux",
+  "Tailwind CSS",
   "Git",
   "GitHub",
-  "Figma",
-  "Tailwind CSS",
 ];
 
 // Stats data for the hero section
 export const STATS = [
-  { value: 3, suffix: "+", label: "Years learning" },
-  { value: 9, suffix: "", label: "Projects built" },
-  { value: 3, suffix: "+", label: "Freelance projects" },
+  { value: 2, suffix: "+", label: "Years experience" },
+  { value: 12, suffix: "", label: "Projects built" },
+  { value: 4, suffix: "+", label: "Production & Freelance" },
 ];
 
 // Social links
@@ -356,14 +363,24 @@ export const SOCIAL_LINKS = [
 ];
 
 export const ABOUT_ME =
-  "I am a full stack developer with a strong passion for building functional and user-friendly web applications. I have hands-on experience building backend APIs and admin dashboards with NestJS and React, along with PHP and Laravel projects. Currently pursuing Level 5 Computing and Physics, I enjoy solving real-world problems through code and continuously improving my development skills.";
+  "I am a self-taught Full Stack Developer with 2+ years of hands-on experience building web applications with React, Next.js, Node.js (NestJS/Express), and Laravel. I specialize in delivering real-world e-commerce, delivery, logistics, and management platforms with REST APIs, authentication, admin panels, and 2-way Telegram bot automation. I have practical experience integrating LLMs, engineering real-time customer-driver chat with Socket.IO, and deploying and maintaining applications on Ubuntu Linux servers. Currently pursuing Level 4 & 5 Computing (BTEC / Pearson, NCC) and BSc Physics at Mandalar University, I am committed to clean architecture, high performance, and continuous learning.";
 
 export const TIMELINE = [
   {
-    title: "BSc Physics (4th Year)",
-    institution: "Mandalay University",
+    title: "Level 4 & 5 Diploma in Computing",
+    institution: "BTEC / Pearson, NCC Education",
+    date: "2024 - Present",
+    type: "Education",
+    description:
+      "Higher national diploma in computing covering software engineering, database design, and systems development.",
+  },
+  {
+    title: "BSc Physics",
+    institution: "Mandalar University",
     date: "2018 - 2026",
     type: "Education",
+    description:
+      "Core physics degree developing analytical problem-solving, mathematical foundations, and critical thinking.",
   },
   {
     title: "Outstanding Student Award",
@@ -373,22 +390,12 @@ export const TIMELINE = [
     type: "Award",
   },
   {
-    title: "Level 4 Diploma in Computing",
-    institution: "NCC Education",
-    date: "2024 - 2025",
-    type: "Education",
-  },
-  {
-    title: "UI/UX Design for Beginners",
-    institution: "Strategy First International College (SFIC)",
-    date: "Feb 2025",
+    title: "UI/UX & Graphic Design",
+    institution: "Strategy First / Independent",
+    date: "2025",
     type: "Certification",
-  },
-  {
-    title: "Preparation Program for NCC Level 4 Diploma",
-    institution: "Strategy First International College (SFIC)",
-    date: "Aug 2025",
-    type: "Certification",
+    description:
+      "Visual branding, interface ergonomics, wireframing, and graphic design fundamentals.",
   },
   {
     title: "Python Essentials for Beginners",
@@ -396,18 +403,31 @@ export const TIMELINE = [
     date: "Oct 2025",
     type: "Certification",
   },
+  {
+    title: "Self-Taught Web Development Journey",
+    institution: "Independent Learning",
+    date: "2020 - Present",
+    type: "Milestone",
+    description:
+      "Building real-world web applications, production client systems, and mastering modern full-stack architectures.",
+  },
 ];
 
 export const OFFERS = [
   {
-    title: "Web Development",
+    title: "Full Stack Web Development",
     description:
-      "Building APIs, admin dashboards, and full-stack web applications with NestJS, React, PHP, and Laravel.",
+      "Building high-performance web applications, scalable REST APIs, and intuitive admin dashboards with React, Next.js, NestJS, and Laravel.",
   },
   {
-    title: "UI Design",
+    title: "Bot Automation & Real-time Systems",
     description:
-      "Designing clean and responsive user interfaces with a focus on usability and simplicity.",
+      "Developing 2-way Telegram bot workflows, Socket.IO real-time chat, and mobile PWAs for seamless operational monitoring and communication.",
+  },
+  {
+    title: "Linux Deployment & AI Integration",
+    description:
+      "Deploying, securing, and maintaining production applications on Ubuntu Linux servers, paired with intelligent LLM integration and database indexing.",
   },
 ];
 
@@ -415,16 +435,21 @@ export const FAQS = [
   {
     question: "Who are you?",
     answer:
-      "I am Wai Yan Ko Ko, a full stack developer who enjoys building practical web applications, backend APIs, and admin dashboards.",
+      "I am Wai Yan Ko Ko (Zeru), a self-taught Full Stack Developer with 2+ years of hands-on experience building production web applications, backend APIs, and automation systems.",
   },
   {
     question: "What technologies do you use?",
     answer:
-      "I mainly work with NestJS, React, TypeScript, PHP, Laravel, Prisma, and PostgreSQL, along with frontend tools like Tailwind CSS and Bootstrap.",
+      "My core tech stack includes React, Next.js, TypeScript, Node.js (NestJS & Express), PHP, Laravel, PostgreSQL, MySQL, Supabase, MongoDB, and Prisma, deployed on Ubuntu Linux servers.",
   },
   {
-    question: "Are you available for work?",
+    question: "Do you have experience with bots and real-time features?",
     answer:
-      "Yes, I am open to full stack developer roles and freelance opportunities.",
+      "Yes! I have built 2-way Telegram bot automation for orders and alerts, real-time messaging with Socket.IO, digital receipt/voucher generators, and LLM integrations.",
+  },
+  {
+    question: "Are you open to remote or freelance opportunities?",
+    answer:
+      "Yes, I am actively open to remote full-time developer positions, project-based contracts, and freelance work.",
   },
 ];

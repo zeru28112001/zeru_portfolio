@@ -135,23 +135,23 @@ export const ScrollTimeline = ({
       animationOrder === "simultaneous"
         ? 0
         : animationOrder === "staggered"
-        ? index * 0.2
-        : index * 0.3;
+        ? Math.min((index % 2) * 0.08, 0.15)
+        : Math.min(index * 0.04, 0.12);
 
     const initialStates = {
-      fade: { opacity: 0, y: 20 },
+      fade: { opacity: 0, y: 15 },
       slide: {
         x:
           cardAlignment === "left"
-            ? -100
+            ? -60
             : cardAlignment === "right"
-            ? 100
+            ? 60
             : index % 2 === 0
-            ? -100
-            : 100,
+            ? -60
+            : 60,
         opacity: 0,
       },
-      scale: { scale: 0.8, opacity: 0 },
+      scale: { scale: 0.9, opacity: 0 },
       flip: { rotateY: 90, opacity: 0 },
       none: { opacity: 1 },
     };
@@ -165,12 +165,12 @@ export const ScrollTimeline = ({
         scale: 1,
         rotateY: 0,
         transition: {
-          duration: 0.7,
+          duration: 0.4,
           delay: baseDelay,
-          ease: [0.25, 0.1, 0.25, 1.0] as [number, number, number, number],
+          ease: "easeOut" as const,
         },
       },
-      viewport: { once: false, margin: "-100px" },
+      viewport: { once: true, margin: "0px 0px -40px 0px" },
     };
   };
 
@@ -368,7 +368,7 @@ export const ScrollTimeline = ({
                     variants={getCardVariants(index)}
                     initial="initial"
                     whileInView="whileInView"
-                    viewport={{ once: false, margin: "-100px" }}
+                    viewport={{ once: true, margin: "0px 0px -40px 0px" }}
                     style={parallaxIntensity > 0 ? { y: yOffset } : undefined}
                   >
                     <Card className="bg-background border">

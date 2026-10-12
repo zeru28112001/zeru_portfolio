@@ -125,7 +125,7 @@ export default function HomePage() {
                 View Projects
               </MagneticButton>
               <MagneticButton
-                onClick={() => window.open("/z3ru180_3182026.pdf", "_blank")}
+                onClick={() => window.open("/WaiYanKoKo_Resume.pdf", "_blank")}
                 variant="outline"
                 className="border-white/10 hover:bg-white/5"
               >
@@ -335,18 +335,24 @@ export default function HomePage() {
       {/* ━━━ ABOUT ME ━━━ */}
       <section className="relative py-24 bg-[#11131B]">
         <div className="max-w-6xl mx-auto px-6">
-          <FadeUp className="mb-12 flex justify-center md:justify-start">
-            <Badge variant="secondary" className="mb-6 mx-auto">
+          <FadeUp className="mb-16 text-center">
+            {/* <Badge variant="secondary" className="mx-auto block w-fit">
               Who I Am
-            </Badge>
+            </Badge> */}
+            <h2
+              className="text-4xl md:text-5xl font-bold mt-4 text-center"
+              style={{ fontFamily: "Syne, sans-serif" }}
+            >
+              About <span className="gradient-text">Me</span>
+            </h2>
           </FadeUp>
 
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center max-w-5xl mx-auto">
             {/* FIRST COLUMN: PHOTO */}
             <div className="flex justify-center md:justify-end">
               <FadeUp
                 delay={0.1}
-                className="relative w-64 h-64 md:w-80 md:h-[400px] rounded-3xl overflow-hidden group border border-white/10 shadow-2xl"
+                className="relative w-72 h-80 md:w-88 md:h-[460px] rounded-3xl overflow-hidden group border border-white/10 shadow-[0_0_50px_rgba(23,62,255,0.15)]"
               >
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#173eff]/40 to-transparent z-10 opacity-60 group-hover:opacity-20 transition-opacity duration-500" />
                 <img
@@ -360,11 +366,23 @@ export default function HomePage() {
             {/* SECOND COLUMN: DESCRIPTION */}
             <FadeUp
               delay={0.2}
-              className="text-center flex flex-col items-center md:items-start md:text-left justify-center"
+              className="flex flex-col items-center md:items-start text-center md:text-left justify-center"
             >
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed font-medium text-justify">
+              <p className="text-base md:text-lg text-white/80 leading-relaxed font-normal text-left">
                 {ABOUT_ME}
               </p>
+
+              {/* <div className="mt-6 flex flex-wrap gap-2.5 justify-center md:justify-start">
+                <span className="text-xs px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/70">
+                  📍 Mandalay, Amarapura
+                </span>
+                <span className="text-xs px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/70">
+                  💼 Open to Remote
+                </span>
+                <span className="text-xs px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/70">
+                  ⚡ 2+ Years Experience
+                </span>
+              </div> */}
             </FadeUp>
           </div>
         </div>
@@ -415,23 +433,23 @@ export default function HomePage() {
       <section className="relative py-24 bg-black border-t border-white/5 overflow-hidden">
         <FallBeamBackground beamColorClass="blue-400" className="opacity-40" />
         <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <FadeUp>
-            <ScrollTimeline
-              title="My Journey"
-              subtitle="Education, Certifications & Awards"
-              darkMode={true}
-              cardVariant="outlined"
-              lineColor="bg-[#173eff]/30"
-              activeColor="bg-[#173eff]"
-              progressIndicator={true}
-              events={TIMELINE.map((item) => ({
-                year: item.date,
-                title: item.title,
-                subtitle: `${item.type} • ${item.institution}`,
-                description: item.description || "",
-              }))}
-            />
-          </FadeUp>
+          <ScrollTimeline
+            title="My Journey"
+            subtitle="Education, Certifications & Awards"
+            darkMode={true}
+            cardVariant="outlined"
+            animationOrder="simultaneous"
+            parallaxIntensity={0}
+            lineColor="bg-[#173eff]/30"
+            activeColor="bg-[#173eff]"
+            progressIndicator={true}
+            events={TIMELINE.map((item) => ({
+              year: item.date,
+              title: item.title,
+              subtitle: `${item.type} • ${item.institution}`,
+              description: item.description || "",
+            }))}
+          />
         </div>
       </section>
 
