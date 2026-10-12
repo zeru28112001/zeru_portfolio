@@ -388,8 +388,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ━━━ JOURNEY (TIMELINE) ━━━ */}
+      <section className="relative py-24 bg-black border-t border-white/5 overflow-hidden">
+        <FallBeamBackground beamColorClass="blue-400" className="opacity-40" />
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
+          <ScrollTimeline
+            title="My Journey"
+            subtitle="Education, Certifications & Awards"
+            darkMode={true}
+            cardVariant="outlined"
+            animationOrder="simultaneous"
+            parallaxIntensity={0}
+            lineColor="bg-[#173eff]/30"
+            activeColor="bg-[#173eff]"
+            progressIndicator={true}
+            events={TIMELINE.map((item) => ({
+              year: item.date,
+              title: item.title,
+              subtitle: `${item.type} • ${item.institution}`,
+              description: item.description || "",
+            }))}
+          />
+        </div>
+      </section>
+
       {/* ━━━ OFFERS ━━━ */}
-      <section className="relative py-24 bg-[#13161f]">
+      <section className="relative py-24 bg-[#13161f] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <FadeUp className="mb-16 text-center">
             <h3
@@ -426,30 +450,6 @@ export default function HomePage() {
               </GlowingCard>
             ))}
           </GlowingCards>
-        </div>
-      </section>
-
-      {/* ━━━ JOURNEY (TIMELINE) ━━━ */}
-      <section className="relative py-24 bg-black border-t border-white/5 overflow-hidden">
-        <FallBeamBackground beamColorClass="blue-400" className="opacity-40" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <ScrollTimeline
-            title="My Journey"
-            subtitle="Education, Certifications & Awards"
-            darkMode={true}
-            cardVariant="outlined"
-            animationOrder="simultaneous"
-            parallaxIntensity={0}
-            lineColor="bg-[#173eff]/30"
-            activeColor="bg-[#173eff]"
-            progressIndicator={true}
-            events={TIMELINE.map((item) => ({
-              year: item.date,
-              title: item.title,
-              subtitle: `${item.type} • ${item.institution}`,
-              description: item.description || "",
-            }))}
-          />
         </div>
       </section>
 
