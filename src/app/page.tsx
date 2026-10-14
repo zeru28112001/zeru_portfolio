@@ -380,7 +380,7 @@ export default function HomePage() {
                   💼 Open to Remote
                 </span>
                 <span className="text-xs px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/70">
-                  ⚡ 2+ Years Experience
+                  ⚡ 3+ Years Experience
                 </span>
               </div> */}
             </FadeUp>

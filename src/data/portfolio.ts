@@ -350,7 +350,7 @@ export const TOOLS = [
 
 // Stats data for the hero section
 export const STATS = [
-  { value: 2, suffix: "+", label: "Years experience" },
+  { value: 3, suffix: "+", label: "Years experience" },
   { value: 12, suffix: "", label: "Projects built" },
   { value: 4, suffix: "+", label: "Production & Freelance" },
 ];
