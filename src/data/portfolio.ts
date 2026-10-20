@@ -8,7 +8,7 @@ export const HERO_CONTENT = {
   title: "Full Stack Developer",
   name: "Wai Yan Ko Ko",
   badge: "Open to Remote Work",
-  bio: "Self-taught Full Stack Developer with 2+ years of hands-on experience building web applications with React, Next.js, Node.js (NestJS/Express), and Laravel. Delivering Telegram bot automation and Ubuntu Linux server deployments.",
+  bio: "Full Stack Developer with 2+ years of experience building and deploying production web apps with React, Next.js, NestJS/Express, and Laravel. Comfortable in team environments and equally able to deliver end-to-end systems independently. Focused on e-commerce, delivery, and logistics platforms with real-time features and Telegram bot automation. Live projects include nowfashioncollection.com.",
   heroImage: "/profile.jpg",
   aboutImage: "/image.png",
 };
@@ -129,9 +129,9 @@ export const PROJECTS: Project[] = [
     title: "MyTogether Food Delivery System",
     brand: "NestJS + React",
     description:
-      "Built a food delivery backend system with NestJS REST APIs and React frontend, featuring Socket.IO real-time chat, order tracking, and indexed search.",
+      "Backend Developer on a team project (May–Jul 2026). Built NestJS REST APIs, a React admin dashboard with role-based access, Socket.IO real-time chat, and indexed search for a food delivery platform.",
     longDescription:
-      "Full Stack Developer (Project-based, Remote, 2026) for My Together. Built a comprehensive food delivery backend system with NestJS REST APIs and a React frontend. Implemented authentication, restaurant and menu management, order processing, and real-time order status updates. Developed a real-time chat feature using Socket.IO for customer-driver communication and engineered fast restaurant and menu search using database indexing. Collaborated closely with 2 senior developers on architecture, PR reviews, migrations, and CI/CD deployment to AWS EC2.",
+      "Backend Developer (Team Project, Remote, May 2026–Jul 2026) for My Together. Joined a team with 2 senior engineers as the backend developer on a food delivery platform. Built NestJS REST APIs for authentication, restaurant and menu management, and order processing. Built the React frontend and an admin dashboard with role-based access for 3 user roles: admin, customer, and shop. Implemented real-time order status updates and customer-driver chat using Socket.IO. Improved restaurant and menu search speed with database indexing. Collaborated closely with senior developers on architecture, PR reviews, migrations, and CI/CD deployment to AWS EC2.",
     features: [
       "NestJS REST APIs & React admin dashboard — full-stack food delivery operations",
       "Real-time customer-driver chat — built with Socket.IO for live in-transit communications",
@@ -350,7 +350,7 @@ export const TOOLS = [
 
 // Stats data for the hero section
 export const STATS = [
-  { value: 3, suffix: "+", label: "Years experience" },
+  { value: 2, suffix: "+", label: "Years experience" },
   { value: 12, suffix: "", label: "Projects built" },
   { value: 4, suffix: "+", label: "Production & Freelance" },
 ];
@@ -363,7 +363,7 @@ export const SOCIAL_LINKS = [
 ];
 
 export const ABOUT_ME =
-  "I am a self-taught Full Stack Developer with 2+ years of hands-on experience building web applications with React, Next.js, Node.js (NestJS/Express), and Laravel. I specialize in delivering real-world e-commerce, delivery, logistics, and management platforms with REST APIs, authentication, admin panels, and 2-way Telegram bot automation. I have practical experience integrating LLMs, engineering real-time customer-driver chat with Socket.IO, and deploying and maintaining applications on Ubuntu Linux servers. Completed Level 4 & 5 Diploma in Computing (BTEC / Pearson, NCC) in July 2026, and currently pursuing BSc Physics at Mandalar University, I am committed to clean architecture, high performance, and continuous learning.";
+  "I am a Full Stack Developer with 2+ years of experience building and deploying production web applications. I am comfortable working in team environments alongside senior engineers, and equally able to deliver end-to-end systems independently. I specialize in e-commerce, delivery, and logistics platforms with REST APIs, authentication, admin panels, real-time features via Socket.IO, and 2-way Telegram bot automation. I also have practical experience integrating LLMs, and deploying and maintaining applications on Ubuntu Linux servers. Completed Level 4 & 5 Diploma in Computing (BTEC / Pearson, NCC) in July 2026, and currently pursuing BSc Physics at Mandalar University — committed to clean architecture, high performance, and continuous learning.";
 
 export const TIMELINE = [
   {
