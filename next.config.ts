@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
       // waiyankoko.com/resume → serves the actual PDF
       {
         source: "/resume",
-        destination: "/WaiYanKoKo_171026.pdf",
+        destination: "/WaiYanKoKo_CV.pdf",
       },
     ];
   },
