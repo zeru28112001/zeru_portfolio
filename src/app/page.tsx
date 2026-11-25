@@ -46,11 +46,27 @@ import {
   Server,
   Database,
   Layers,
-  Zap,
-  Container,
+  Terminal,
+  Smartphone,
+  Bot,
+  Palette,
+  Layout,
   Mail,
   Plus,
+  Zap,
 } from "lucide-react";
+
+const ICON_MAP: Record<string, React.ElementType> = {
+  Layout,
+  Palette,
+  Smartphone,
+  Server,
+  Code,
+  Bot,
+  Database,
+  Layers,
+  Terminal,
+};
 
 import { useRouter } from "next/navigation";
 
@@ -76,8 +92,6 @@ const FadeUp = ({
 
 export default function HomePage() {
   const router = useRouter();
-
-  const SKILL_ICONS = [Code, Layers, Server, Zap, Database, Container];
 
   return (
     <div
@@ -247,61 +261,35 @@ export default function HomePage() {
           </FadeUp>
           <FadeUp delay={0.2}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-              {SKILLS.map((category, idx) => (
+              {SKILLS.map((category) => (
                 <div key={category.category} className="flex flex-col gap-6">
-                  <h3 className="text-xl font-bold text-white/90 border-l-4 border-[#173eff] pl-4 mb-2">
+                  <h3 className="text-xl font-bold text-white/90 pl-4 mb-2 flex items-center gap-2.5">
+                    <span className="w-1.5 h-5 bg-[#173eff] rounded-full inline-block" />
                     {category.category}
                   </h3>
                   <div className="flex flex-col gap-4">
-                    {category.items.map((skill, i) => {
-                      const Icon = SKILL_ICONS[(idx + i) % SKILL_ICONS.length];
+                    {category.items.map((skill) => {
+                      const Icon = (skill.icon && ICON_MAP[skill.icon]) || Code;
                       return (
                         <InteractiveGradient
                           key={skill.name}
                           color="#173eff"
-                          glowColor="rgba(23,62,255,0.2)"
+                          glowColor="rgba(23,62,255,0.25)"
                           backgroundColor="#0d0f19"
                           borderRadius="1rem"
                           width="100%"
                           followMouse={true}
                           hoverOnly={true}
                           intensity={0}
-                          className="p-5 text-left items-start! border-transparent"
+                          className="p-4 px-5 text-left flex items-center justify-start w-full border border-white/5 hover:border-[#173eff]/40 transition-all duration-300 group"
                         >
-                          <div className="flex flex-col gap-4 w-[300px]">
-                            <div className="flex items-center gap-3">
-                              <div className="p-2.5 bg-[#173eff]/15 rounded-xl text-[#173eff]">
-                                <Icon size={20} />
-                              </div>
-                              <span className="font-bold text-white text-lg">
-                                {skill.name}
-                              </span>
+                          <div className="flex items-center gap-3.5 w-full">
+                            <div className="p-2.5 bg-[#173eff]/15 rounded-xl text-[#173eff] shrink-0 group-hover:scale-105 group-hover:bg-[#173eff]/25 transition-all">
+                              <Icon size={20} />
                             </div>
-                            <div className="w-full">
-                              <div className="flex justify-between text-xs text-white/40 mb-1.5">
-                                <span>Proficiency</span>
-                                <span className="text-[#173eff] font-semibold">
-                                  {skill.level}%
-                                </span>
-                              </div>
-                              <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
-                                <motion.div
-                                  className="h-full rounded-full"
-                                  style={{
-                                    background:
-                                      "linear-gradient(90deg, #173eff, #3758f9)",
-                                  }}
-                                  initial={{ width: 0 }}
-                                  whileInView={{ width: `${skill.level}%` }}
-                                  transition={{
-                                    duration: 1.2,
-                                    delay: i * 0.1,
-                                    ease: "easeOut",
-                                  }}
-                                  viewport={{ once: true }}
-                                />
-                              </div>
-                            </div>
+                            <span className="font-bold text-white text-base md:text-lg leading-tight text-left">
+                              {skill.name}
+                            </span>
                           </div>
                         </InteractiveGradient>
                       );
@@ -317,14 +305,14 @@ export default function HomePage() {
       {/* ━━━ TOOLS MARQUEE ━━━ */}
       <section className="relative py-20 bg-[#13161f] overflow-hidden border-y border-white/5">
         <TextScrollMarquee
-          baseVelocity={2}
+          baseVelocity={0.5}
           className="text-[#173eff] font-extrabold uppercase tracking-widest text-4xl md:text-6xl mx-4 opacity-80"
         >
           {TOOLS.join(" • ") + " • "}
         </TextScrollMarquee>
         <div className="mt-8">
           <TextScrollMarquee
-            baseVelocity={-1.5}
+            baseVelocity={-0.4}
             className="text-white font-extrabold uppercase tracking-widest text-4xl md:text-6xl mx-4 opacity-20"
           >
             {TOOLS.slice().reverse().join(" • ") + " • "}

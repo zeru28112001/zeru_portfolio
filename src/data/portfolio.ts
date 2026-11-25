@@ -8,7 +8,7 @@ export const HERO_CONTENT = {
   title: "Full Stack Developer",
   name: "Wai Yan Ko Ko",
   badge: "Open to Remote Work",
-  bio: "Full Stack Developer with 2+ years of experience building and deploying production web apps with React, Next.js, NestJS/Express, and Laravel. Comfortable in team environments and equally able to deliver end-to-end systems independently. Focused on e-commerce, delivery, and logistics platforms with real-time features and Telegram bot automation. Live projects include nowfashioncollection.com.",
+  bio: "Full Stack Developer with 2+ years of experience building and deploying production web apps with React, Next.js, NestJS/Express, and Laravel. Comfortable in team environments and equally able to deliver end-to-end systems independently. Focused on e-commerce, delivery, and logistics platforms with real-time features and Telegram bot automation.",
   heroImage: "/profile.jpg",
   aboutImage: "/image.png",
 };
@@ -154,6 +154,7 @@ export const PROJECTS: Project[] = [
       "AWS EC2",
     ],
     imageUrl: "/projects/mytogether.png",
+    liveUrl: "https://play.google.com/store/apps/details?id=com.mytogetherorg.mytogether",
   },
   {
     id: 1,
@@ -302,48 +303,63 @@ export function getProjectPath(id: number) {
   return `/projects/${id}`;
 }
 
-export const SKILLS = [
-  {
-    category: "Backend & Systems",
-    items: [
-      { name: "Node.js / NestJS / Express", level: 88 },
-      { name: "PHP / Laravel / REST APIs", level: 90 },
-      { name: "Ubuntu Linux / Deployment", level: 82 },
-    ],
-  },
+export type SkillItem = {
+  name: string;
+  icon: string;
+};
+
+export type SkillCategory = {
+  category: string;
+  items: SkillItem[];
+};
+
+export const SKILLS: SkillCategory[] = [
   {
     category: "Frontend & Mobile",
     items: [
-      { name: "React / Next.js / TypeScript", level: 90 },
-      { name: "Tailwind CSS / Bootstrap", level: 88 },
-      { name: "PWA / Flutter (basic)", level: 75 },
+      { name: "React / Next.js", icon: "Layout" },
+      { name: "Tailwind CSS / Responsive UI", icon: "Palette" },
+      { name: "PWA / Flutter (basic)", icon: "Smartphone" },
     ],
   },
   {
-    category: "Databases & Automation",
+    category: "Backend & Systems",
     items: [
-      { name: "PostgreSQL / MySQL", level: 88 },
-      { name: "Supabase / MongoDB / Prisma", level: 84 },
-      { name: "Telegram Bot / Socket.IO", level: 86 },
+      { name: "NestJS / Express / TypeScript", icon: "Server" },
+      { name: "PHP / Laravel / REST APIs", icon: "Code" },
+      { name: "WebSockets / Telegram Bot API", icon: "Bot" },
+    ],
+  },
+  {
+    category: "Databases & Ops",
+    items: [
+      { name: "PostgreSQL / MySQL", icon: "Database" },
+      { name: "Supabase / Prisma / MongoDB", icon: "Layers" },
+      { name: "Ubuntu Linux / VPS / GitHub Actions", icon: "Terminal" },
     ],
   },
 ];
 
 export const TOOLS = [
-  "NestJS",
-  "Next.js",
   "React",
+  "Next.js",
   "TypeScript",
-  "Express.js",
-  "Laravel",
-  "Supabase",
-  "PostgreSQL",
-  "MongoDB",
-  "Prisma",
-  "Socket.IO",
-  "Telegram Bot",
-  "Ubuntu Linux",
   "Tailwind CSS",
+  "PWA",
+  "Flutter",
+  "NestJS",
+  "Express.js",
+  "PHP",
+  "Laravel",
+  "WebSockets",
+  "Telegram Bot",
+  "PostgreSQL",
+  "MySQL",
+  "Supabase",
+  "Prisma",
+  "MongoDB",
+  "Ubuntu Linux",
+  "GitHub Actions",
   "Git",
   "GitHub",
 ];
@@ -363,7 +379,7 @@ export const SOCIAL_LINKS = [
 ];
 
 export const ABOUT_ME =
-  "I am a Full Stack Developer with 2+ years of experience building and deploying production web applications. I am comfortable working in team environments alongside senior engineers, and equally able to deliver end-to-end systems independently. I specialize in e-commerce, delivery, and logistics platforms with REST APIs, authentication, admin panels, real-time features via Socket.IO, and 2-way Telegram bot automation. I also have practical experience integrating LLMs, and deploying and maintaining applications on Ubuntu Linux servers. Completed Level 4 & 5 Diploma in Computing (BTEC / Pearson, NCC) in July 2026, and currently pursuing BSc Physics at Mandalar University — committed to clean architecture, high performance, and continuous learning.";
+  "Full Stack Developer with 2+ years of experience building and deploying production web applications using React, Next.js, NestJS, and Laravel. I specialize in e-commerce, delivery, and logistics platforms featuring real-time WebSockets, 2-way Telegram bot automation, and robust Linux deployments. Whether collaborating with engineering teams or delivering end-to-end systems independently, I am committed to clean code, scalable architecture, and measurable results.";
 
 export const TIMELINE = [
   {

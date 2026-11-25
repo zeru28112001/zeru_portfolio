@@ -117,9 +117,11 @@ export const InteractiveGradient = ({
     <div
       ref={cardRef}
       className={cn(
-        `relative grid place-content-center place-items-center text-center
-        border transition-all duration-300
+        `relative border transition-all duration-300
         interactive-gradient-card text-foreground`,
+        className && (className.includes("flex") || className.includes("block") || className.includes("items-start"))
+          ? ""
+          : "grid place-content-center place-items-center text-center",
         backgroundColor || 'bg-white dark:bg-black',
         className
       )}
